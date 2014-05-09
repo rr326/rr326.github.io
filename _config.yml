@@ -3,7 +3,7 @@ name: Ross' Blog
 title: Ross' Blog title
 email: rrosen326@gmail.com
 description: "Blog for Ross Rosen"
-baseurl: "k2company.com"
+baseurl: ""
 url: "http://k2company.com"
 highlighter: pygments
 
