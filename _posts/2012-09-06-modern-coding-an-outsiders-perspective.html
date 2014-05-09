@@ -1,0 +1,43 @@
+---
+layout: post
+title: Modern Coding – An outsiders perspective
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '1'
+author:
+  login: ross_rosen
+  email: ross_rosen@yahoo.com
+  display_name: admin
+  first_name: ''
+  last_name: ''
+---
+<p><a href="http://k2company.com/blog/wp-content/uploads/Iceman1.jpg"><img class="alignleft size-medium wp-image-246" title="Iceman" src="http://k2company.com/blog/wp-content/uploads/Iceman1-202x300.jpg" alt="Iceman" width="202" height="300" /></a></p>
+<p>20 years ago I was a programmer. I graduated with a CS degree, Kernighan &amp; Ritchie (if you don’t know what that is then you really are young!), and I got to work. I had 4 PCs on my desk and spent my days slowly grinding away. I worked mostly alone, I built things mostly from scratch, and spent an inordinate amount of time hunting memory leaks. (Remember them?)</p>
+<p>Then my career went a different way.  I became a product manager, then a marketing guy, then an executive. Excel formulas were the closest I got to programming.</p>
+<p>Recently I decided to get into data analytics and I partnered with a very smart physics grad student. My theory was I would do the high level stuff and he would do all the data “science” and programming. This made obvious sense.</p>
+<p>But apparently getting a Ph.D. takes a bit of work, so he didn’t have the time to devote to doing the nuts and bolts of the project. I was left with the prospect of either failing or doing it myself. I did it myself.</p>
+<p>I learned to program in Python, gained a familiarity with machine learning algorithms and use, and became a decent entry level programmer, but now with modern tools. And I can tell you – what a difference two decades make! These modern tools took a marketing executive and turned him into a decent programmer and budding data scientist, and all in a few months.</p>
+<p>For all the actual programmers out there, this is old hat. But here is a reminder of how cool these things are, for those who take it for granted.</p>
+<ul>
+<li><strong>Python </strong>– Python, sweet Python … let me count the ways I love you:
+<ul>
+<li><strong>Packages / Libraries</strong> – Wow. Wow. WOW! There is a package for EVERYTHING. Often two or three. This means that instead of building everything from scratch, you get to use incredibly powerful, high-level tools. Your job is more about assembly than creation.</li>
+<li><strong>Tutorials / Books / eLearning</strong> – I had professors to teach me C. I had free, exceptional tutorials and websites to teach me Python. What a treasure trove.</li>
+<li><strong>Documentation</strong> – I’ll make this a separate point, since it is so important. It’s incredible that people have spent so much time writing amazing open source packages. But then to write DOCUMENTATION for them? I was a coder – I hated writing docs. I got paid, yet I still barely did it. These open source contributors do it just because it needs to be done. Awesome.</li>
+<li><strong>Stack Overflow &amp; The Python Community</strong> – The community of givers about Python is amazing. When I learned Python I took a ton of shortcuts – generally learning just enough to get by. So I would constantly be confronted with simple issues that I could either spend a bunch of time figuring out, or I could ask the internet. At first it was, “python lambda tutorial.” Ah … that’s how it works. Then it became, “Python How do you reverse a dictionary?” And eventually more esoteric ones like, “Python convert UTC time to local”. With very few exceptions, the global mind always had a very specific and extraordinarily helpful answer for me. (And thank you!)</li>
+<li><strong>High Level</strong> – Python is a high level language, which means one line of code can do a lot. In the old days, I moved bytes of data, one line of code at a time. Now I can say, “Build a random forest classifier using this training data.”<br />
+<em>forest=RandomForestClassifier(...); forest.fit(X,y)</em><br />
+Or maybe that feels too much like the value of a package. How about, “iterate through every element of a list and transform each item to lowercase.”<br />
+<em>[x.lower() for x in mylist]</em></li>
+</ul>
+</li>
+<li><strong>Moore’s Law</strong> – One of the joys of modern programming is that you can optimize on coding efficiency instead of algorithm efficiency for many tasks. Apparently Python is 10x as slow as C, but it is probably that much faster to get things done. But even within Python, you can afford to be inefficient. I ran a 2000 feature machine learning model with 30,000 rows on my laptop. Instead of doing fancy NLP, I did inefficient regular expressions. One algorithm wasn’t available using an efficient sparse matrix data structure, so I had a fully-expanded (mostly empty) 2,000x30,000 array. My laptop didn’t hiccup. And just for the fun of it, I tried10 different algorithms.  I did optimization by running an exhaustive combination of algorithm parameters.   Why not? Why optimize your coding?  (And yes – I recognize I was not writing Google’s core infrastructure – but few of us are.)</li>
+<li><strong>Free</strong>   Python – free. Advanced machine learning and natural language processing frameworks – free. Development environment – free. MySQL – free. Tutorials and documentation – free.</li>
+<li><strong>Cloud infrastructure</strong> – To my regret, I didn’t get a chance to play with AWS. But I can’t wait for a large enough problem that it won’t fit on my laptop and I can quickly spin it up in the cloud, run it, and then turn off the cost.</li>
+</ul>
+<p>What a great time to be an engineer. What leverage. What opportunity. What fun!</p>
+<p>Disclaimer – I am sure I have exposed my ignorance in many ways in this post. But that’s the point – in three months I went from a marketing exec to an reasonably effective entry-level programmer. You could not have done that 20 years ago.</p>

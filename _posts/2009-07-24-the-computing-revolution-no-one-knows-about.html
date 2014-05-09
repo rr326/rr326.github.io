@@ -1,0 +1,44 @@
+---
+layout: post
+title: The computing revolution no one knows about
+categories:
+- GPGPU
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: ross_rosen
+  email: ross_rosen@yahoo.com
+  display_name: admin
+  first_name: ''
+  last_name: ''
+---
+<p>I'm a pretty technical and informed person when it comes to information technology. I'm not an engineer (any more), but compared to most business people working in the industry, I know a fair bit. But I had no idea that there is a massive revolution going on in the computing industry. The fundamental paradigm that has powered the industry for the last 20 years has changed. It amazes me I didn't know this. And I'm guessing that many techno-savvy people don't either.</p>
+<h3>The Past</h3>
+<p>Since the mid 80's, the computer industry has been built on the fact that the speed of computers doubles every 18 months. This is widely described as "<a href="http://en.wikipedia.org/wiki/Moore%27s_law">Moore's Law</a>," but Moore's Law is slightly different.  Moore's Law states that the density of transistors in a chip doubles every 18 months.  For nearly 20 years microprocessor companies could squeeze more transistors into their chips and run them twice as fast - doubling the frequency the chips run at. This doubling of frequency directly led to a doubling of performance. (Frequency ~  the number of instructions that can be run in a second.) Thus, year after year, the speed of a single processor grew at about <a href="http://www.dlhoffman.com/classnotes/csci6380-s08/slides/01-Introduction/img7.html">52%</a><span>.  This predictable increase in processing power has driven the growth of the computer industry.  (Think about how awesome your iPhone is.  That wasn't possible 4 years ago.)</span></p>
+<h3>The Change</h3>
+<p>People have been predicting the demise of Moore's Law for years, but even with existing technology projections, Moore's Law seems to have at least a few cycles left. That said, the predictable implication of Moore's Law - that single processor performance doubles every 18 months - has <em>already</em> broken.</p>
+<p>This is a huge huge point and suggests a fundamental shift in the computer industry. But before I discuss the implications, let me explain what is going on.</p>
+<p>For 20 years, Intel kept doubling the frequency of their chips, thereby doubling performance. But in 2004, Intel hit "the power wall." (<a href="http://en.wikipedia.org/wiki/Tejas_and_Jayhawk">Source</a>) The power consumption of a chip is directly related to the frequency it runs at. So every time you double the frequency (other things being equal), you double the power required to run the chip. This gets costly in terms of straight electricity cost, but you also have to spend a lot on expensive air conditioning to suck the excess heat away. And the further you push the chips, the more these power costs dominate the benefit of increased performance. And on top of that, it gets difficult to cool these chips even if you wanted to. So single-processor performance stalled.</p>
+<p><span>But Moore's Law keeps trucking, so what can you do with the extra transistors? Well, instead of building a processor that is twice as fast, just build two of them.  When transistor density doubles again, build 4. Then 8. Etc.  You can see this taking place already in dual core and now quad core processors.</span></p>
+<h3>The Hidden Revolution</h3>
+<p>Anyone who's been paying attention to computers knows that we've moved to a multi-core world. And maybe in the back of our minds we've wondered about the implications. Is 2 really twice as good as 1? But I could imagine one processor is doing my antivirus check while one lets me surf the net and do email. And when we get to 4? And 8? 16? ... 128 cores? What in the world would my laptop do with 128 cores? And would it really be 128 times as fast as 1 core?</p>
+<p>There's the hidden revolution: the answer is, basically, "no."  Or, at least, a 128 core computer is not going to be 128 times as fast as a 1 core computer without some serious changes in the industry.  That's the revolution.</p>
+<p><span>In the past, if you wrote a program and didn't touch it, in 7 generations (about 18<span>mths</span> * 7 = 10.5 years), your program would run 128 times faster. (Ignoring I/O issues, which is obviously crucial). With many-core, to take advantage of the 128 cores, you would have to entirely rewrite your code to do parallel processing.  And this is assuming it is even possible to <span>parallelize</span> your code. If your program is fundamentally serial, then 7 microprocessor generations down the road it might not run any faster.</span></p>
+<h3>What This Means</h3>
+<p><span>There is a fundamental shift that needs to take place in the computing industry, from serial programming, to parallel programming. This is a very non-trivial change. Some companies, like Intel, are betting that it is too big a change, and their goal is to hide the complexity and paradigm shift from users beneath smarter processors, compilers, and <span>OS's</span>. My gut feel, admittedly knowing little, is this is a short term solution at best. If the future of computing is parallel, then the future of programming will be parallel too, and all new students coming out of college or grad school will be well versed in parallel programming models.</span></p>
+<p>Another implication may be that for many applications, speed may simply not improve very much. It is not obvious that all programs (or algorithms) are parallelizable. (In fact, many probably aren't.) So if you have a set of tasks that require serial processing, the doubling of peformance every 18 months will no longer apply.</p>
+<h3>Conclusion</h3>
+<p>This is just a taste of the issues involved. (And I apologize for any mistakes or simplifications I've made - my knowledge is days old.) But the implications are huge.</p>
+<h3>Further Reading</h3>
+<ul>
+<li><span><a href="http://perilsofparallel.blogspot.com/2008/09/clarifying-black-hole.html">http://perilsofparallel.blogspot.com/2008/09/clarifying-black-hole.html</a></span></li>
+<li><span><a href="http://www.ctwatch.org/quarterly/articles/2007/02/the-many-core-inflection-point-for-mass-market-computer-systems/1/">http://www.<span>ctwatch</span>.org/quarterly/articles/2007/02/the-many-core-inflection-point-for-mass-market-computer-systems/1/</a></span></li>
+<li><a href="http://www.verilab.com/blog/2007/06/the-core-problem-of-computing/">http://www.verilab.com/blog/2007/06/the-core-problem-of-computing/</a></li>
+<li><a href="http://www.cccblog.org/2008/08/26/the-multicore-challenge/">http://www.cccblog.org/2008/08/26/the-multicore-challenge/</a></li>
+<li><a href="http://www.nytimes.com/2008/04/30/technology/30lab.html?ex=1367294400&amp;en=dcbcbeea423f8a2f&amp;ei=5124&amp;partner=permalink&amp;exprod=permalink">http://www.nytimes.com/2008/04/30/technology/30lab.html?ex=1367294400&amp;en=dcbcbeea423f8a2f&amp;ei=5124&amp;partner=permalink&amp;exprod=permalink</a></li>
+<li>And I've got a ton more. Let me know if you want links.</li>
+</ul>

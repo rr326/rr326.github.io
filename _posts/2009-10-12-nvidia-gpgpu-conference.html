@@ -1,0 +1,28 @@
+---
+layout: post
+title: NVIDIA GPGPU Conference
+categories:
+- GPGPU
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: ross_rosen
+  email: ross_rosen@yahoo.com
+  display_name: admin
+  first_name: ''
+  last_name: ''
+---
+<p>I went to the <a href="http://www.nvidia.com/object/gpu_technology_conference.html">NVIDIA GPU Technology Conference</a> in San Jose at the beginning of October and there were a few interesting things worth pointing out.  The show highlighted how scientists are using the technology, and how businesses are trying to capitalize on it. Some of the scientific projects taking advantage of the low cost, highly parallel computational capacity of GPUs were really amazing. On the other hand, with a few exceptions, the businesses highlighted were surprisingly uninteresting. I guess this is a good thing for me. It shows that other than GPU-izing existing applications, new businesses haven't really figured out what new things are possible with the technology.</p>
+<p>Here is a smattering of cool things to check out:</p>
+<ul>
+<li>Pat Hanrahan - A professor of CS at Stanford, he showed two very cool things. One is a visual query language, now embodied in <a href="http://www.tableausoftware.com/">Tableau Software</a>, a great Seattle start-up. (Tableau does to visualizing data what Lotus/Excel did for modeling it.)  Later he showed a very ambitious project at Stanford on <a href="http://www.graphics.stanford.edu/~hanrahan/talks/dsl/dsl.pdf">Domain Specific Languages</a> (DSLs). Long story short: the idea is to enable domain specialists (for instance, Computational Fluid Dynamics experts) to be able to focus on modeling their science, and not on implementing their modeling. For example, for CFD, a DSL could allow researchers to work on modeling the science and not modeling the implementation of meshes or data structures for computing. Then the compiler could take care of the mesh implementations and data structures. And even better, the compiler can optimize the computation for different computing platforms, such as GPUs. Very cool stuff.</li>
+<li>Computer Vision with Horst Bishof - Horst showed a lot of very cool things, including this one: <a href="http://grail.cs.washington.edu/rome/">Building Rome in a Day</a>.  Here, they imported about 200,000 amateur photos of Rome from Flickr, used a bunch of computation, and built a highly accurate 3-D model of Rome. Awesome.</li>
+<li>Hanspeter Pfister of Harvard showed some amazing research projects going on at Harvard.  The common element was the extraordinary amount of data processing involved. One was reconstructing the <a href="http://iic.harvard.edu/research/connectome">neural circuitry in brains</a>. Another was <a href="http://www.mwatelescope.org/">massive arrays of radio telescope</a>s. Check out the <a href="http://ispss.istreamplanet.com/nvidia/d/keynote_091001.html">video</a>.</li>
+<li>One company really doing some cool stuff was <a href="http://www.motiondsp.com/">MotionDSP</a>. These GPUs are great at visual computation, unsurprisingly, and MotionDSP really takes advantage of them. They process video to clean up the images, either for consumers or for police / defense forensics. Watch the <a href="http://www.vreveal.com/video_demos">videos</a>.</li>
+<li><a href="http://www.enodo.fr">Enodo </a>is both really boring and really interesting. They are boring because they don't seem to create any real technology but simply implement it for consulting projects. They use the <a href="http://www.enodo.fr">Cryengine</a> (the technology behind the video game Crysis) to build 3-D models for training and other uses. For instance, they modeled an oil rig and built simulations to train people what to do in emergencies.  Instead of reading training documents, people work through realistic 3-D simulations - essentially playing training video games. Here's what's cool: First, they are licensing a technology that was designed for video gaming and using it for something more valuable. Wait - sounds exactly like GPGPU, doesn't it? Second, what a great idea - real-world, 3-D simulations as part of a normal business. Given how realistic 3-D simulations and rendering are these days, and the trajectory of technology, it seems clear that this will become more commonplace.</li>
+</ul>
+<p>These are pretty sketchy writeup. Follow the links to learn more. They are cream of the crop - you won't be disappointed.</p>

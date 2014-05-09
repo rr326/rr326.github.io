@@ -1,0 +1,64 @@
+---
+layout: post
+title: Agent Based Modeling
+categories:
+- GPGPU
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: ross_rosen
+  email: ross_rosen@yahoo.com
+  display_name: admin
+  first_name: ''
+  last_name: ''
+---
+<p>One application for GPGPU is Agent Based Modeling (ABM).  ABM is a technique where you model the behavior of a system, not by modeling aggregate or average aspects of the system, but instead by modeling the activities of individual agents. For instance, think about modeling traffic. One way to do it is to say that the average speed of a motorist is X, there is a Y chance of an accident, if there is an accident the flow is impacted in a certain way, etc. With agent based modeling, instead of dealing with aggregates, you deal with the individual actors. So each motorist has an individual speed profile, likelihood of getting into an accident, location they are going to, etc. Then instead of trying to solve the global solution, you arrive at it by programming a million individual motorists and then watching what happens. (This is obviously a highly parallel problem and hence its suitability to GPGPU.) [<a href="http://en.wikipedia.org/wiki/Agent_based_model">Wikpedia on ABM</a>]</p>
+<p>Agent Based Modeling can be applied to a wide range of phenomena, including modeling:</p>
+<ul>
+<li>Traffic patterns</li>
+<li>The flow of people leaving a stadium</li>
+<li>The path of flocking birds</li>
+<li>The emergence of genocide</li>
+<li>Macroeconomic activity (emerging from the activity of individual agents)</li>
+<li>Swine flu propagation</li>
+</ul>
+<p>One of the key elements of ABM is the concept of <a href="http://en.wikipedia.org/wiki/Emergence">emergence</a>.  "Emergence is the way complex systems and patterns arise out of a multiplicity of relatively simple interactions," often in unpredictable ways. For instance, imagine a bunch of people trying to leave a packed stadium quickly. Each has a few simple rules about how he or she behaves. It turns out that if you put a column in front of the exit door, slightly to one side, the throughput of exiting increases. This is a non-obvious result that emerges, somewhat surprisingly, from the interaction of many agents following simple individual rules of behavior.</p>
+<h3>A Simple ABM Example: Boids</h3>
+<p>Simulator (Video): <a href="http://www.dcs.shef.ac.uk/~paul/publications/boids/index.html">http://www.dcs.shef.ac.uk/~paul/publications/boids/index.html</a></p>
+<p>Imagine trying to program the behavior of a flock of birds. Sounds bafflingly difficult, don't you think? Well, it turns out that you can do a pretty good job modeling the behavior of an entire flock by creating a bunch of fake birds (or "boids" in this case), giving them a few simple rules of interaction, and then turning them loose. Recognizable patterns of flocking result.</p>
+<p>The model for the above simulation is slightly more complex, but the <a href="http://www.red3d.com/cwr/boids/">original boids model </a>had three rules for each boid:</p>
+<ol>
+<li>Separation: Steer to avoid crowding local flockmates</li>
+<li>Alignment: Steer towards the average heading of local flockmates</li>
+<li>Cohesion: Steer to move toward the average position of local flockmates</li>
+</ol>
+<p>That's it. Give a boid these simple rules, put a bunch together in a fake 3D space, and watch them fly like a real flock of birds. This really shows the power of ABM. Simple and understandable rules can lead to interesting and complex group behavior.</p>
+<h3>ABM Example: Emergence of Riots</h3>
+<p>With boids, you can see how simple rules can lead to recognizable behavior. In the social sciences, ABM has been done to give insight into the causes of group behavior.</p>
+<p>Here is a fantastic paper on an ABM that shows the emergence of civil violence and genocide: <a href="http://www.econ.iastate.edu/tesfatsi/Epstein.CivilViolence.pdf">Link</a>.  It's not difficult, but does take more effort to read than watching boids fly. But it's worth it.</p>
+<p>Imagine a grid of squares. Each square is either empty or occupied by a person or a cop. Each person feels some amount of personal hardship (eg: poverty) and some amount of faith in the legitimacy of the government. Put the two together, and each person feels some grievance towards the government. (EG: If you are hungry and you believe the government is corrupt, you'll hate the govt. If you're hungry but you believe the govt. is doing it's best, you won't blame them.) Based on this grievance, you may decide to rebel against the government. (Say, by rioting.)</p>
+<p>What's holding you back are cops. Or, more specifically, your fear of getting arrested by the cops, which is dependent on the number of cops near you, and the likelihood that they will arrest you.</p>
+<p>That's the essence of the model:</p>
+<ul>
+<li>Agent rule: If your grievance &gt; your fear of getting arrested, go active. Otherwise, be quiet.</li>
+<li>Cop rule: Arrest one random riotor near you.</li>
+</ul>
+<p>Then you can run the simulation (thousands of times) and see what happens. And what happens looks a lot like real mob behavior.</p>
+<p>But then it gets interesting.  You can actually learn something from the model.</p>
+<ul>
+<li>When a cop is nearby, agents go inactive (ie: non rebellious). When the cop leaves, they rebel again.  Which makes sense when you think about it, but it wasn't anticipated by the model authors.</li>
+<li>The illegitimacy of a regime isn't what is important - it is fast changes in perceived illigitimacy that precipitates rebellion. Here, the modelers slowly reduced the legitimacy of the regime from very high to very low, but no rebellion broke out. Why? Because as legitimacy decreased, some small numbers of agents would be pushed over the tipping point from quiet to rebellious. But then they were quickly arrested by the cops, never catalyzing a full-scale rebellion. But when illigitimacy spiked, lots of people simultaneously went from quiet to rebellious. The cops couldn't keep up. So more people saw that others were rebelling and felt emboldened themselves and went active. The result was a mob / rebellion / riot. Once again, in retrospect this makes sense. But it would have been difficult to predict.</li>
+</ul>
+<p>I'm not doing this paper justice. It's very worth reading.</p>
+<h3>Conclusion</h3>
+<p>Agent Based Modeling is a very cool and very powerful modeling technique that is still in the early days of adoption.  It also scales very well to GPU acceleration.  It is an area I am going to continue to look into.</p>
+<h3>Further Reading</h3>
+<ul>
+<li><a href="http://www.pnas.org/content/99/suppl.3/7280.full">Agent-based modeling: Methods and techniques for simulating human systems </a></li>
+<li><span style="color: #306eff;"><a href="http://www.econ.iastate.edu/tesfatsi/abmread.htm">On-Line Guide for Newcomers to Agent-Based Modeling in the Social Sciences</a></span></li>
+<li><span style="color: #306eff;"><a href="http://www.red3d.com/cwr/ibm.html">Individual-Based Models</a></span></li>
+</ul>

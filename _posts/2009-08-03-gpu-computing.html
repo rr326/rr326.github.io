@@ -1,0 +1,33 @@
+---
+layout: post
+title: 'Geek Stuff: GPU Computing'
+categories:
+- GPGPU
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: ross_rosen
+  email: ross_rosen@yahoo.com
+  display_name: admin
+  first_name: ''
+  last_name: ''
+---
+<p>I started this blog after learning that you can now buy a 4 TFLOP supercomputer for under $10,000.  This post will examine how this is possible and the implications and challenges for the future.</p>
+<h3>History: CPUs and GPUs</h3>
+<p>CPUs are the Central Processing Unit that run a computer. Over time they have grown faster and smarter and capable of doing more complex things. GPUs (Graphics Processing Units) are specialized chips that are focused on a much narrower set of tasks: doing all the things necessary to draw fancy graphics on your screen. Over time, GPUs also got faster, but did so in large part by becoming highly parallel.  CPUs have also gone multi-core, but a multicore CPU may have 4 cores, while  a current GPU may have 240 smaller, more specialized processing units.</p>
+<p>Recently, GPUs have made their specialized functions more programmable. And while they still are not capable of doing everything needed to run your computer (ie: they are not CPU replacements), they can now run tasks beyond merely drawing things on your screen.  It turns out that the hardware required for drawing on your screen is also good for generalized mathematical processing. By making the GPUs programmable, manufacturers are now opening up these chips to developers.</p>
+<h3>Limitations and Challenges of GPU Computing</h3>
+<p>GPU Computing (or <a href="http://en.wikipedia.org/wiki/Gpgpu">General Purpose computing on GPUs</a>) holds great potential, but it also has significant limitations.  For instance:</p>
+<ul>
+<li>GPUs are massively parallel. A 4 TFLOP NVIDIA computer has almost 1000 cores. Programming massively parallel computers is very difficult, even for smart people. (This was drilled home to me when I spoke to two super-smart CS professors, both of whom said parallel programming is hard, even for them.)</li>
+<li>GPU programming is highly constrained. First, you need a task that can be paralellized. Not all can.  But even then you need tasks that are "embarrassingly parallel" - tasks that can be split up and processed without a lot of interaction between the atomic tasks. GPUs can be really fast with these sorts of problems, but if threads need to share data amongst each other, a low-end GPU computer will bog down. (The memory architecture isn't up to the task.)</li>
+<li>The tools and skillsets needed to support this sort of programming are nascent at best.  We're early in the world of broadly adopted parallel programming.</li>
+</ul>
+<h3>Opportunity</h3>
+<p>Despite these challenges, it seems to me that inevitable that industry will find a way to overcome the challenges and take advantage of this new processing power.  First, the switch to parallel programming has to happen. Main CPUs have already gone multi-core, and soon will be 8, then 16, 32, 64, then 128 cores. To take advantage of this, parallel programming will be a must.  GPUs (with 240 cores) are ahead of the curve, but the industry will catch up.  And second, industry always finds ways to take advantage of new technologies.  Its not obvious why a construction company needs 4 TFLOPs of power - but eventually they will have it.  (Ok - maybe it's not that hard to imagine a construction company having very sophisticated computer models of the building they will construct, rather than mere blueprints.)</p>
+<p>Right now, much of the potential of GPU computing is being applied to traditional supercomputer or computationally intensive applications: scientific modeling, Computer Aided Design, Computer Aided Diagnosis (eg: having a computer automatically read a CAT scan), oil &amp; gas exploration, etc. These are arenes where people already had difficult, computationally oriented challenges, and applying the new technology is more straightforward. (ie: do the same thing, just better / cheaper / in more situations).  NVIDIA has seen speedups increase 3 to 40x for some of these applications.</p>
+<p>More interesting to me are what general business applications could benefit from this processing power. And here, for applications that are not already optimized for parallel processing, NVIDIA as seen speedups of as much as 100x.  That's amazing - two orders of magnatude is transformational. So, applicatons will arise, and it is up to the entrepreneur to find them.</p>

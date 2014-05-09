@@ -1,0 +1,96 @@
+---
+layout: post
+title: GPGPU Application Categorization
+categories:
+- GPGPU
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: ross_rosen
+  email: ross_rosen@yahoo.com
+  display_name: admin
+  first_name: ''
+  last_name: ''
+---
+<p>In trying to figure out what GPUs <em>can</em> be used for in the future, it seems instructive to start by looking at what they currently <em>are</em>being used for.  What follows is a pretty boring and dry, but I believe important, overview of the types of things GPUs are being used for (beyond graphics). My source data is the <a href="http://www.nvidia.com/object/cuda_home.html">NVIDIA CUDA site</a>.</p>
+<p><small><em>Disclaimer: NVIDIA isn't the only GPU that supports general processing, but it seems to have the greatest current traction. Also, the user-submitted content on the NVIDIA site certainly has its biases, but it has info on over 500 applications, so it's an interesting source for real-world examples.</em></small></p>
+<h3>High-Level Categorization</h3>
+<p>Below is a rough categorization of different types of applications. It isn't comprehensive, or even accurately categorized, but should give you a high-level feel for what is going on. s</p>
+<ul>
+<li>Numerical / Scientific computation
+<ul>
+<li>Computational Fluid Dynamics</li>
+<li>Signal Processing</li>
+<li>Computational Chemistry</li>
+<li>Neural Networks</li>
+<li>Cryptography</li>
+<li>Genetic Programming</li>
+<li>Algorithms
+<ul>
+<li>Linear algebra</li>
+<li>Linear optimization</li>
+<li>Sparse matrix vector product</li>
+<li>Gaussian mixture models</li>
+<li>Stochastic differential equations</li>
+<li>Fourier transforms</li>
+<li>k Nearest Neighbor</li>
+<li>3D Particle Boltzmann solver</li>
+<li>Parallel sorting</li>
+<li>List ranking</li>
+<li>Traveling salesman problem</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Imaging
+<ul>
+<li>Medical Imaging
+<ul>
+<li>Image reconstruction</li>
+<li>Image compression</li>
+</ul>
+</li>
+<li>Other
+<ul>
+<li>Ray tracing</li>
+<li>Holography</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Oil &amp; Gas exploration</li>
+<li>Finance</li>
+<li>Hybrid physics / visualization</li>
+<li>Gaming</li>
+</ul>
+<h3>Examples</h3>
+<p>The above list may give you a general notion of the types of issues, but let me dig in to a few to give you some deeper insight.</p>
+<h4>Scientific Computation: Computational Fluid Dynamics</h4>
+<p>A great way to get a sense for what scientific computing is about is to look at the <a href="http://en.wikipedia.org/wiki/Computational_fluid_dynamics">Wikipedia entry for CFD</a>.  Below is an extended excerpt. Skimming it should give you a good flavor.</p>
+<blockquote><p><strong>Computational fluid dynamics (CFD)</strong> is one of the branches of <a title="Fluid mechanics" href="/wiki/Fluid_mechanics">fluid mechanics</a> that uses numerical methods and algorithms to solve and analyze problems that involve fluid flows. Computers are used to perform the millions of calculations required to simulate the interaction of liquids and gases with surfaces defined by boundary conditions. Even with high-speed <a title="Supercomputer" href="/wiki/Supercomputer">supercomputers</a> only approximate solutions can be achieved in many cases.</p>
+<p>...</p>
+<p>The most fundamental consideration in CFD is how one treats a continuous fluid in a discretized fashion on a computer. One method is to discretize the spatial domain into small cells to form a volume <a title="Unstructured grid" href="/wiki/Unstructured_grid">mesh</a> or <a title="Regular grid" href="/wiki/Regular_grid">grid</a>, and then apply a suitable <a title="Algorithm" href="/wiki/Algorithm">algorithm</a> to solve the equations of motion (<a title="Euler equations (fluid dynamics)" href="/wiki/Euler_equations_(fluid_dynamics)">Euler equations</a>for inviscid, and Navier-Stokes equations for viscous flow). In addition, such a mesh can be either irregular (for instance consisting of triangles in 2D, or pyramidal solids in 3D) or regular; the distinguishing characteristic of the former is that each cell must be stored separately in memory. Where shocks or discontinuities are present, <a title="High-resolution scheme" href="/wiki/High-resolution_scheme">high resolution schemes</a> such as Total Variation Diminishing (TVD), <a title="Flux-Corrected Transport" href="/wiki/Flux-Corrected_Transport">Flux Corrected Transport</a> (FCT), <a title="Essentially NonOscillatory (page does not exist)" href="/w/index.php?title=Essentially_NonOscillatory&amp;action=edit&amp;redlink=1">Essentially NonOscillatory</a> (ENO), or <a title="MUSCL scheme" href="/wiki/MUSCL_scheme">MUSCL</a> schemes are needed to avoid spurious oscillations (<a title="Gibbs phenomenon" href="/wiki/Gibbs_phenomenon">Gibbs phenomenon</a>) in the solution.</p>
+<p>If one chooses not to proceed with a mesh-based method, a number of alternatives exist, notably :</p>
+<ul>
+<li>Smoothed particle hydrodynamics (SPH), a Lagrangian method of solving fluid problems,</li>
+<li><a title="Spectral method" href="/wiki/Spectral_method">Spectral methods</a>, a technique where the equations are projected onto basis functions like the <a title="Spherical harmonics" href="/wiki/Spherical_harmonics">spherical harmonics</a> and <a title="Chebyshev polynomials" href="/wiki/Chebyshev_polynomials">Chebyshev polynomials</a>,</li>
+<li><a title="Lattice Boltzmann methods" href="/wiki/Lattice_Boltzmann_methods">Lattice Boltzmann methods</a> (LBM), which simulate an equivalent <a title="Mesoscopic scale" href="/wiki/Mesoscopic_scale">mesoscopic</a> system on a Cartesian grid, instead of solving the macroscopic system (or the real microscopic physics).</li>
+</ul>
+<p>It is possible to directly solve the Navier-Stokes equations for <a title="Laminar flow" href="/wiki/Laminar_flow">laminar flows</a> and for turbulent flows when all of the relevant length scales can be resolved by the grid (a <a title="Direct numerical simulation" href="/wiki/Direct_numerical_simulation">Direct numerical simulation</a>). In general however, the range of length scales appropriate to the problem is larger than even today's massively parallel computers can model. In these cases, turbulent flow simulations require the introduction of a turbulence model. <a title="Large eddy simulation" href="/wiki/Large_eddy_simulation">Large eddy simulations</a>(LES) and the Reynolds-averaged Navier-Stokes equations (RANS) formulation, with the <em>k-ε</em> model or the Reynolds stress model, are two techniques for dealing with these scales.</p>
+<p>In many instances, other equations are solved simultaneously with the Navier-Stokes equations. These other equations can include those describing species <a title="Concentration" href="/wiki/Concentration">concentration</a> (<a title="Mass transfer" href="/wiki/Mass_transfer">mass transfer</a>), <a title="Chemical reaction" href="/wiki/Chemical_reaction">chemical reactions</a>, <a title="Heat transfer" href="/wiki/Heat_transfer">heat transfer</a>, etc. More advanced codes allow the simulation of more complex cases involving multi-phase flows (e.g. liquid/gas, solid/gas, liquid/solid), <a title="Non-Newtonian fluid" href="/wiki/Non-Newtonian_fluid">non-Newtonian fluids</a> (such as <a title="Blood" href="/wiki/Blood">blood</a>), or <a title="Chemical reaction" href="/wiki/Chemical_reaction">chemically reacting</a> flows (such as <a title="Combustion" href="/wiki/Combustion">combustion</a>).</p></blockquote>
+<h4>Imaging: Tomographic Reconstruction</h4>
+<p>"<strong>Tomography</strong> is imaging by sections or sectioning." For instance, when you take a CT-scan, you are taking lots of individual slices of a picture, and then you need to put the data together. "Reconstruction" is the process of putting these different slices together.</p>
+<p>Here's what's cool. There is a trade-off between the number of slices and detail of the slices you take and the computation required to reconstruct an image. You can take less data (and hence have the patient spend less time strapped into a CT scanner, or process more patients), but then it might take days to process the data. But with GPU computing you get the best of both worlds: fast scanning and fast reconstruction. Thus, GPGPU is significantly changing what is possible.</p>
+<p>There is a great video that talks about one example of this: <a href="http://fastra.ua.ac.be/en/index.html">http://fastra.ua.ac.be/en/index.html</a></p>
+<h4>Video Enhancement / Cleanup</h4>
+<p>This is such a no-brainer. Someday this will be standard.  Check it out: <a href="http://www.vreveal.com/video_demos">http://www.vreveal.com/video_demos</a></p>
+<h3>Performance Improvement</h3>
+<p>I'll be shocked if anyone's made it this far. I know I'd have quit. But at the risk of burying the lead, here's the cool part.</p>
+<p>The performance improvement demonstrated with some of these CUDA applications (ie: GPGPU apps) is pretty remarkable. Some show modest improvements of 3x to 10x. Not bad, but not revolutionary. Many, however, show speedups in the 30x to 40x range. And these are compared to apps often already optimized for CPUs. And some algorithms or apps show speedups in the 100x to 300x range. That's obviously amazing.  (Though, per <a href="Amdahl's law">Amdahl's Law</a>, if the algorithm is a small portion of the total computation time, that isn't that helpful.)</p>
+<h3>Conclusion</h3>
+<p>Not surprisingly, the majority of the effort in GPGPU to date has been in hard-core scientific and mathetmatical computations. These are the areas that lend themselves to parallel computing of floating point operations, the problems have been studied and worked on for years, and the jump to GPUs is obvious (though difficult). Yet the performance improvements can be remarkable.</p>
+<p>I still believe my original thesis: that this sort of massive computing power will have impact for general business applications, and not just be relegated to traditional HPC-type problems.</p>

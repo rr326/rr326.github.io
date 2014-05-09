@@ -1,0 +1,33 @@
+---
+layout: post
+title: The Weather In Seattle Sucks - And I Can Prove It
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '1'
+author:
+  login: ross_rosen
+  email: ross_rosen@yahoo.com
+  display_name: admin
+  first_name: ''
+  last_name: ''
+---
+<p>We all know the weather in Seattle sucks, recent weather notwithstanding. (Don't believe me? Look at the <a href="http://www.weather.com/weather/5-day/Seattle+WA+USWA0395:1:US" title="Seattle Weather Forecast" target="_blank">weather forecast</a>. Our summer starts in July.) </p>
+<p>As a data geek, I wanted to see just how bad our weather is. And I wanted to see how I could use some modern web and data tools to visualize something we all know, but is surprisingly poorly demonstrated.</p>
+<p>I started with free <a title="NOAA Data" href="ftp://ftp3.ncdc.noaa.gov/pub/data/noaa/isd-lite/" target="_blank">NOAA / National Weather Service data</a>. Then I used Python to download, transform, and export the data. I then uploaded it to a modern NoSQL database. I used <a href="https://cloudant.com/" title="Cloudant" target="_blank">Cloudant</a>, a fantastic company  located in Pioneer Square and Boston. I started my analysis in Excel, which really is a great analytical tool. But after I had the answer, I wanted to be able to share it with people. I wanted a website. So I used an open source visualization platform called d3.js, which came out of <a href="http://vis.stanford.edu/" title="Stanford Visualization Group" target="_blank">Stanford's visualization group</a>, which incidentally also brought us <a href="http://www.tableausoftware.com/" title="Tableau" target="_blank">Tableau </a> and <a href="http://www.cs.washington.edu/people/faculty/jheer/" title="Jeff Heer" target="_blank">Jeff Heer</a>, one of UW's outstanding new CS profs. </p>
+<p>Geekery aside, just how bad is it here? The first thing to think about is, what constitutes suckage? As Seattleites know, it's not that it rains a lot here. It's certainly not very cold. It's not too hot. Or too humid. Actually, we have pretty nice weather here in Seattle, with one tiny exception. We have no sun. Summer aside, it's always cloudy here. How bad is it?</p>
+<p>Answer - other than Anchorage, Seattle has less sun than any other major city in the US.</p>
+<p>The below chart shows a ranking of clear sky percentage for the largest cities in the US. Here, "clear skies" is defined as the percent of daylight hours over the year where the sky had no more than 25% cloud coverage. And for the "largest cities", I took<a title="Wikipedia Largest 100 US Cities" href="http://en.wikipedia.org/wiki/Largest_US_cities"> Wikipedia's Largest 100 US Cities</a> and included any I could find weather data for.</p>
+<p>(Scroll over the below chart for details.)<br />
+<iframe src="http://www.weather-explorer.com/embed_ranking_seattle_year.html"  height=440 width=620></iframe></p>
+<p>So why the preoccupation with sunshine? I used to live in the Bay and I can remember many a day coming out of some interminable meeting and walking outside into a lame office park and then being hit with full force sun. All the absurdity melted away and I just couldn't help feeling good about life. Let's face it - sun just adds energy and happiness to your life. It's not that you <em>can't</em> be happy in cloudy weather, it's just that sun makes it that much easier.</p>
+<p>But back to the data. Just how much worse off do we have it? Other than being ranked second to last, how does that feel day to day? Below is a screenshot of an interactive graphic that lets you compare the weather in Seattle vs. other cities. (You have to click on the picture and go to the web page to use it.)</p>
+<p>Play around with it. You can find some surprising things. Like on average in April, Mountain View, CA has 4.4 hours of sun for every hour we have. Look at Portland, OR. They always have more sun than us. New York - we beat them in July. Woo hoo! Want to feel better about yourself? Look at Anchorage. Ouch. </p>
+<p><a href="http://http://www.weather-explorer.com/weather_comp.html"><img src="http://k2company.com/blog/wp-content/uploads/weathercompare_3001.png" alt="Compare The Weather in Two Locations" width="300" height="279" class="aligncenter size-full wp-image-421" target="_blank"/></a><br />
+So wherever you fall on the great Seattle vs. Bay Area debate, you've got to concede the weather. We lose.  </p>
+<p>----<br />
+Finally, if you're a data junkie and want a few more charts, check out this: <a href="http://www.weather-explorer.com/ranking.html" title="Sunshine Rankings" target="_blank">More Sunshine Rankings</a></p>
+<p>I was surprised to see that during summer our sun-ranking was actually pretty mediocre (ranked 48 of 75). That said, our summers are pretty sweet. </p>

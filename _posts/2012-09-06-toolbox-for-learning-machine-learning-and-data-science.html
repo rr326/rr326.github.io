@@ -1,0 +1,61 @@
+---
+layout: post
+title: Toolbox for learning machine learning and data science
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: ross_rosen
+  email: ross_rosen@yahoo.com
+  display_name: admin
+  first_name: ''
+  last_name: ''
+---
+<p><a href="http://k2company.com/blog/wp-content/uploads/toolbox.jpg"><img class="alignleft size-full wp-image-263" title="toolbox" src="http://k2company.com/blog/wp-content/uploads/toolbox.jpg" alt="" width="242" height="200" /></a>Recently I jumped in and taught myself how to do medium-sized data exploration and machine learning. (Excel-sized &lt; <strong>My Data Set</strong> &lt; Big Data)</p>
+<p>If you are a real data scientist or expert, skip this. It isn't for you. But if you have a good data set and want to start playing with it and learning some of the tools of modern data analytics, perhaps this can save you some time.</p>
+<h3>Matlab vs. R vs. Python</h3>
+<p>If you work at a university or big company, maybe you have access to Matlab, which is apparently great, but expensive. I didn't.</p>
+<p>A physicist I was working with knew and used R. Apparently it is incredibly powerful and has many of the most cutting edge algorithms. BUT, I found the syntax baffling, the documentation copious, but written for mathematicians instead of hackers, and overall difficult and frustrating.</p>
+<p>Python, on the other hand, is a dream. The language is easy. The documentation is copious and comprehensible. The online community is awesome. And in addition to all the analysis, you can do data munging as well. Python was my pick, and I think it was the right one.</p>
+<p>The next step is picking the packages to support Python.</p>
+<h3>Python Packages for Analysis</h3>
+<p>I'm sure there are a lot of different choices with pluses and minuses, but this set served me very well, came after reasonable research, and never let me down. So it's a good starting point.</p>
+<ul>
+<li><a href="http://wiki.python.org/moin/Python2orPython3" target="_blank">Python 2.7 (vs. 3.x)</a> - It feels weird to use an older version, but all the packages work with 2.x, and some might not work with 3.x, so I went with 2.x and never had a problem.</li>
+<li><a href="http://numpy.scipy.org/" target="_blank">NumPy</a> &amp; <a href="http://www.scipy.org/" target="_blank">SciPy</a> - these are the core packages for scientific computation, array manipulation, etc. They are the base.</li>
+<li><a href="http://matplotlib.sourceforge.net/" target="_blank">Matplotlib</a> - this allows you to do lots of easy visual analysis, charting, etc. Very powerful, but also easy for easy things. A histogram is a couple of lines.</li>
+<li><a href="http://ipython.org/" target="_blank">iPython</a> - this is the base interactive shell for python scientific computing. The key is you can easily run commands from the shell as you experiment. I played with others, but I wish I had switched to iPython sooner.</li>
+<li><a href="http://sourceforge.net/projects/console/" target="_blank">Console2</a> (windows) - If you use Windows, get the free Console2 and <a href="http://wiki.ipython.org/Cookbook/Using_IPython_with_Console2" target="_blank">hook iPython (and Git, and cygwin, etc.) up to it</a>.</li>
+<li><a href="http://pandas.pydata.org/" target="_blank">Pandas</a> - Pandas implements R's "dataframe" concept in python. Basically it wraps Numpy arrays so you can reference rows and columns by labels instead of just numbers. Overall, I was mixed on Pandas. It's undoubtedly powerful, and when you are good at it, you can do things simply and elegantly. But I also found that the vast majority of my debugging and tinkering was in Pandas. So I guess I'd say skip it at the start, but know its out there in case you feel you need it.</li>
+<li><a href="http://statsmodels.sourceforge.net/" target="_blank">Statsmodels</a> - This is a statistics package that did the trick for my limited usage.</li>
+<li><a href="http://scikit-learn.org/stable/" target="_blank">Scikit-learn</a>- A great package with lots of machine learning algorithms, easy to use, and great documentation.
+<ul>
+<li><a href="http://orange.biolab.si/" target="_blank">Orange</a> - Orange is another ML package which is very <a href="http://stackoverflow.com/questions/1289920/is-there-a-recommended-package-for-machine-learning-in-python" target="_blank">highly recommended</a>, and also has a GUI. But I found it very un-pythonic to my novice eyes. I was trying to figure out how to read in a dict of my features and got lost in a seemingly endless list of Orange classes. When I loooked at Sklearn, it was a one liner. So Sklearn was great for me, but you might want to check out Orange.</li>
+</ul>
+</li>
+<li><a href="http://nltk.org/" target="_blank">NLTK</a> - Natural Language Toolkit - useful for some base machine learning (though sklearn is better), but good if you are doing any NLP.</li>
+<li>Excel - Don't forget Excel! I would often do my analysis in Python, then dump some results into Excel for quick, easy data exploration. If you are really good with the above tools, you probably don't need it. But Excel is SO easy, that I found it a really valuable tool.</li>
+</ul>
+<p>While I'm at it, here are some good documentation sources I used:</p>
+<ul>
+<li>Python - the Python tutorial - <a href="http://docs.python.org/tutorial/">http://docs.python.org/tutorial/</a></li>
+<li>NLP - NLTK.org - <a href="http://nltk.org/">http://nltk.org/</a></li>
+<li>Machine learning - Scikit-learn - <a href="http://scikit-learn.org/stable/">http://scikit-learn.org/stable/</a></li>
+<li>Machine learning - getting a feel for the algorithms themselves - <a href="http://www.manning.com/pharrington/">http://www.manning.com/pharrington/</a> - I didn't do an extensive search for books, but this one is good, and uses Python instead of R.</li>
+<li>Google / StackOverflow - They are your friends - use them liberally.</li>
+</ul>
+<p>Also, if you need to clean up your data to get it into a usable state, you might try <a href="http://vis.stanford.edu/wrangler/" target="_blank">Data Wrangler</a> or  <a href="http://code.google.com/p/google-refine/" target="_blank">Google Refine</a>. I love the concept of both (and Wrangler is wicked-cool), but they were both buggy for me and if you are good with Python, just use it.</p>
+<p>Happy data exploring!</p>
+<p>(Updates)</p>
+<ul>
+<li>Some good comments on <a title="Comments" href="http://news.ycombinator.com/item?id=4485230" target="_blank">Hacker News</a></li>
+<li>Especially this one:
+<ul>
+<li><em><span style="color: #000000;">If you are going to use python for ML. Use the python package from Entthought [<a href="http://www.enthought.com/products/epd_free.php" rel="nofollow" data-bitly-type="bitly_hover_card">http://www.enthought.com/products/epd_free.php</a>]  </span><span style="color: #000000;">It has most of the libraries, out of the box.</span></em></li>
+</ul>
+</li>
+</ul>

@@ -1,0 +1,34 @@
+---
+layout: post
+title: 'Supercool: The personal supercomputer'
+categories:
+- GPGPU
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: ross_rosen
+  email: ross_rosen@yahoo.com
+  display_name: admin
+  first_name: ''
+  last_name: ''
+---
+<p>The discovery that got me re-energized about starting something, and that is providing my jump-off point for investigations, is the following:</p>
+<blockquote><p><em>You can now buy a 4 Teraflop supercomputer for under $10,000.</em></p></blockquote>
+<h3>Why this is amazing</h3>
+<p>For someone like me (ie: know enough to be amazed, but not enough to be blase), this is extraordinary. In 1999, the world's fastest supercomputer clocked in at 2 TFLOPS (<a href="http://www.yahoo.com" target="_blank">Source</a>). It was a typical supercomputer - taking up over 2,000 sq. ft. of space and probably costing close to $100 million (I'm just guessing on the cost). And now you can buy something TWICE as fast for 1/10,000th the cost, plug it in, and put it under your desk.</p>
+<p>The thing that's incredible to me is that this isn't a comparison with some top-of-the-line computer from 1950, but from 1999. Sure - my cell phone has more processing power than the fastest supercomputer in the world from the distant past, but that comparison has lost meaning to me. Back then people were still driving around around in horse-drawn carriages and playing pong. But 1999 is CURRENT. That's AFTER the internet exploded. That's the modern era. And now that supercomputer - that top-of-the-line, hardcore, crazy technology - is now available for $10k. Wow.  [Actually, this comparison is a bit of apples vs. oranges, but it's close enough to true to be startling.]</p>
+<h3>How they do it</h3>
+<p>I think there is increasing activity in the field of personal supercomputing, but the one that got me started is the NVIDIA Tesla (<a href="http://www.nvidia.com/object/tesla_computing_solutions.html">Nvidia</a>, <a href="http://en.wikipedia.org/wiki/Nvidia_tesla">Wikipedia</a>). NVIDIA makes graphics accelerator chips - the chips in your computer used to render graphics (GPU - Graphic Processing Unit). These chips are designed to do all the things needed to display stuff on your computer screen. If you're just reading text, that's not that big a deal. But if you are playing a high-end video game on a wide-screen monitor, that IS a big deal.</p>
+<p>It turns out that GPU's, with some work, can be used to perform general purpose and floating point (ie: math) processing (<a href="http://en.wikipedia.org/wiki/Gpgpu">General Purpose Computing on GPU</a>).  NVIDIA put 240 of these GPU cores on a card, strung 4 of them together, and voila - you've got a 4 teraflop supercomputer for under $10k.</p>
+<h3>What are the implications?</h3>
+<p>This is where things get a bit murkier. The way these <a href="http://en.wikipedia.org/wiki/High-performance_computing">HPC </a>(High Performance Computing) computers work is that they string togther hundreds or thousands of individual processors (or cores) together. You can only get a single processor to be so fast, but if you string 1000 together, then it's a thousand times faster.</p>
+<p>Actually, it's not that easy.  It's only a thousand times faster if you can split up your problem into 1000 smaller problems that can be worked on in parallel. This is fine for some hard math problems like weather simulation, nuclear modeling, and other traditional supercomputing tasks. But it doesn't mean you can just throw a Tesla computer under your desk and have Windows boot in 1/10th of a second. (Even disregarding I/O issues.) So one big issue is solving problems that are parallel-izable.</p>
+<p>Also, what really needs that sort of computing power? I'm particularly intersted in general-purpose business applications. Sure - experimental physicists and the defense department are always going to need hardcore computing power. But does your average company? A standard desktop computer that you can buy for under $1,000 probably has more computing power than most people currently ever use (gaming aside). And while businesses often need big computing power, it is currently more about I/O, databases, transactions, and web serving. This is cool stuff, no doubt, but different from raw processing power.</p>
+<p>All that said, there <em>will</em> be uses for teraflop computing for the masses. I don't know what they will be, but it sounds revolutionary to me and my initial research suggests that others also see this as an upcoming technology transition.</p>
+<h3>Next Steps</h3>
+<p>This is cool stuff. My goal now is to start pulling on the <a title="High Performance Computing">HPC </a>thread and see what I can discover. The question I'm trying to answer is:</p>
+<blockquote><p><em>What becomes possible when you can buy a 4 TFLOP computer for under $10k?</em></p></blockquote>
