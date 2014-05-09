@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b676e75a-5631-468a-88f3-e8da6d2aee37" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hindcite_300x300.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/weatherexplorer300x300.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/csmb-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/sprite-rsmb-x2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/sprite-rsmb.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/ross_custom.css" afterPath="$PROJECT_DIR$/css/ross_custom.css" />
     </list>
     <ignored path="k2company.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +28,7 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="39" selection-start="2154" selection-end="2155" vertical-scroll-proportion="-8.977273" vertical-offset="1450" max-vertical-offset="11865">
+            <state line="123" column="39" selection-start="2154" selection-end="2155" vertical-scroll-proportion="-8.977273" vertical-offset="1450" max-vertical-offset="11850">
               <folding />
             </state>
           </provider>
@@ -52,7 +46,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="215" column="107" selection-start="7927" selection-end="7927" vertical-scroll-proportion="0.544" vertical-offset="2560" max-vertical-offset="4560">
+            <state line="231" column="0" selection-start="8392" selection-end="8392" vertical-scroll-proportion="0.75980395" vertical-offset="2535" max-vertical-offset="4620">
               <folding />
             </state>
           </provider>
@@ -424,7 +418,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="107" selection-start="7927" selection-end="7927" vertical-scroll-proportion="0.544" vertical-offset="2560" max-vertical-offset="4560">
+        <state line="231" column="0" selection-start="8392" selection-end="8392" vertical-scroll-proportion="0.75980395" vertical-offset="2535" max-vertical-offset="4620">
           <folding />
         </state>
       </provider>
