@@ -1,4 +1,18 @@
-.csmb-flat  {
+.fa-icon  {
 	font-size: 60px;
 	color: white;
 }
+
+#db .panel p {
+    color: #555;
+}
+
+/* project 'cards' - with an image, etc*/
+.card {
+    text-align: center;
+}
+
+.card a, .card h3{
+    color:#428bca !important;
+}
+
