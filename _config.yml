@@ -6,7 +6,19 @@ description: "Blog for Ross Rosen"
 baseurl: ""
 url: "http://k2company.com"
 highlighter: pygments
+theme: "smartTheme/theme/assets"
+
 
 # Build settings
 markdown: kramdown
 permalinks: pretty
+
+
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
