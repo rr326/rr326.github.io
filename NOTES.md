@@ -5,3 +5,6 @@
 * Delete k2company hosting on godaddy (AFTER DOWNLOADING!)
 * revelision & k2company redirects
 * Disquis
+* Paginator
+* RSS
+* Share

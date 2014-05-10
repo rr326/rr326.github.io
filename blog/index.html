@@ -7,7 +7,7 @@ title: Ross Rosen
     <br>
     <br>
 
-    {% for post in site.posts offset: 0 limit: 5 %}
+    {% for post in paginator.posts %}
     <div class="row main-blog"> <!-- Single post -->
         <div class="col-lg-8">
             <div class="row">
@@ -31,19 +31,26 @@ title: Ross Rosen
             </div>
 
 
-    </div>
-        {% if forloop.first %}
-                <div class="col-lg-4 sidebar-zone">
-                    <h6>ABOUT</h6>
-
-                    <p>This blog focuses on random business things I've felt like sharing. It's mostly an archive (but
-                        there is some good stuff is in here, if I do say so myself).</p>
-                    <br>
-                    <br>
-                    <br>
-                </div>
-            {% endif %}
         </div>
+        {% if forloop.first %}
+        {% include blog_sidebar.html %}
+        {% endif %}
+    </div>
     {% endfor %}
+
+    <!-- Pagination links -->
+    <div class="pagination">
+        {% if paginator.previous_page %}
+        <a href="/blog/page{{ paginator.previous_page }}" class="previous">Previous</a>
+        {% else %}
+        <span class="previous">Previous</span>
+        {% endif %}
+        <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+        <a href="/blog/page{{ paginator.next_page }}" class="next">Next</a>
+        {% else %}
+        <span class="next ">Next</span>
+        {% endif %}
+    </div>
 
 </div>

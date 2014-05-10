@@ -1,6 +1,6 @@
-.fa-icon  {
-	font-size: 60px;
-	color: white;
+.fa-icon {
+    font-size: 60px;
+    color: white;
 }
 
 #db .panel p {
@@ -12,10 +12,15 @@
     text-align: center;
 }
 
-.card a, .card h3{
-    color:#428bca !important;
+.card a, .card h3 {
+    color: #428bca !important;
 }
 
 .main-blog {
- padding-top: 20px; /* was 90px */
+    padding-top: 20px; /* was 90px */
+}
+
+body {
+    background-color: white;
+
 }

@@ -1,15 +1,57 @@
----
-layout: default
----
-<div class="post">
+<!DOCTYPE html>
+<html>
 
-  <header class="post-header">
-    <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
+  {% include head.html %}
 
-  <article class="post-content">
-  {{ content }}
-  </article>
+    <body>
 
-</div>
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrap">
+
+
+
+          <div class="container">
+              <br>
+              <br>
+
+              <div class="row main-blog">
+                  <div class="col-lg-8">
+                      <div class="row">
+                          <div class="col-md-3 blog-date">
+                              <p>
+                                  <b>Published</b><br/>
+                                  {{ page.date | date_to_string }}
+                              </p>
+                          </div>
+                          <div class="col-md-9 blog-title">
+                              <h2><a href="{{ site.prefix }}{{ post.url }}">{{ page.title }}</a></h2>
+                          </div>
+                      </div>
+
+                      <br>
+
+                      <div class="col-md-9 col-md-offset-3">
+                          {{ page.content }}
+                          <br>
+                          <hr>
+                      </div>
+
+
+                  </div>
+                  {% include blog_sidebar.html %}
+
+              </div>
+
+
+
+          </div>
+
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    </body>
+</html>
