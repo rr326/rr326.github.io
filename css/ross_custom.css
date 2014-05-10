@@ -16,3 +16,6 @@
     color:#428bca !important;
 }
 
+.main-blog {
+ padding-top: 20px; /* was 90px */
+}

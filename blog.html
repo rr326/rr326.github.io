@@ -2,76 +2,48 @@
 layout: default
 title: Ross Rosen
 ---
+
 <div class="container">
-    <div class="row main-blog">
+    <br>
+    <br>
+
+    {% for post in site.posts offset: 0 limit: 5 %}
+    <div class="row main-blog"> <!-- Single post -->
         <div class="col-lg-8">
             <div class="row">
                 <div class="col-md-3 blog-date">
                     <p>
                         <b>Published</b><br/>
-                        June 25, 2013
+                        {{ post.date | date_to_string }}
                     </p>
                 </div>
                 <div class="col-md-9 blog-title">
-                    <h2>Mountain bike for all</h2>
+                    <h2><a href="{{ site.prefix }}{{ post.url }}">{{ post.title }}</a></h2>
                 </div>
             </div>
-            <img class="img-responsive" src="assets/img/blog01.jpg" alt="">
+
             <br>
 
             <div class="col-md-9 col-md-offset-3">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s.</p>
-
-                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                    essentially unchanged.</p>
-
-                <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-                    Ipsum.</p>
-
-                <p><a href="blog-post.html">Read More...</a></p>
+                {{ post.content }}
                 <br>
                 <hr>
             </div>
-            <div class="row">
-                <div class="col-md-3 blog-date">
-                    <p>
-                        <b>Published</b><br/>
-                        June 25, 2013
-                    </p>
-                </div>
-                <div class="col-md-9 blog-title">
-                    <h2>New York love</h2>
-                </div>
-            </div>
-            <img class="img-responsive" src="assets/img/blog02.jpg" alt="">
-            <br>
 
-            <div class="col-md-9 col-md-offset-3">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s.</p>
 
-                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                    essentially unchanged.</p>
-
-                <p><a href="blog-post.html">Read More...</a></p>
-                <br>
-                <hr>
-                <p>
-                    <tag><i class="icon-caret-left"></i> PREVIOUS PAGE | NEXT PAGE <i class="icon-caret-right"></i>
-                    </tag>
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4 sidebar-zone">
-            <h6>ABOUT</h6>
-
-            <p>This blog focuses on random business things I've felt like sharing. It's mostly an archive (but
-                there is some good stuff is in here, if I do say so myself).</p>
-            <br>
-            <br>
-            <br>
-        </div>
     </div>
+        {% if forloop.first %}
+                <div class="col-lg-4 sidebar-zone">
+                    <h6>ABOUT</h6>
+
+                    <p>This blog focuses on random business things I've felt like sharing. It's mostly an archive (but
+                        there is some good stuff is in here, if I do say so myself).</p>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+
 </div>
