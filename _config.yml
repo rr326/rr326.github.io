@@ -7,14 +7,12 @@ baseurl: ""
 url: "http://rossrosen.me"
 highlighter: pygments
 theme: "/smartTheme/theme/assets"
-paginate: 5
-paginate_path: "blog/page:num"
+
+blog_full_posts_before_list: 2
 
 # Build settings
 markdown: kramdown
 permalinks: pretty
-
-
 
 defaults:
   -

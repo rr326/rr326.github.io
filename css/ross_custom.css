@@ -24,3 +24,21 @@ body {
     background-color: white;
 
 }
+
+.blog-date-nopad {
+	padding-top: 0px;
+}
+
+.blog-date-nopad p
+{
+    margin-bottom: 0px !important;
+
+}
+
+.blog-archive-mod
+{
+    padding-top: 0px !important;
+    margin-bottom: 0px !important;
+
+}
+
