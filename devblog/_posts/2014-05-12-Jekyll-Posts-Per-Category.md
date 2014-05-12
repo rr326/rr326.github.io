@@ -1,8 +1,7 @@
 ---
 layout: post
+type: "post"
 ---
-
-# Jekyll Posts Per Category
 
 I wanted to have two different blogs on my site (one for business topics and one focusing on development). Jekyll provides categories to make this work, but figuring out exactly how to move through posts in a given category was non-trivial.
 
@@ -14,22 +13,24 @@ A few key points:
 * Note: Above I have an extra space between the { and % - that's because otherwise jekyll tries to process the liquid tag!  (Below I put my code in a {% raw %} ... {% endraw %} block
 
 
-    {% highlight jinja %}
-    {% raw %}
-    {% for category in site.categories %}
-        {% if category[0] == page.rcategory %}
-            {% for catposts in category %}
-                {% if forloop.first %}
-                    {% continue %}
-                {% endif %}
-                {% for catpost in catposts %}
+{% highlight jinja %}
+{% raw %}
+{% for category in site.categories %}
+    {% if category[0] == page.rcategory %}
+        {% for catposts in category %}
+            {% if forloop.first %}
+                {% continue %}
+            {% endif %}
+            {% for catpost in catposts %}
 
-                    <p>{{ catpost.title }}</p>
+                <p>{{ catpost.title }}</p>
 
-                {% endfor %}
             {% endfor %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+{% endraw %}
+{% endhighlight %}
 
-        {% endif %}
-    {% endfor %}
-    {% endraw %}
-    {% endhighlight %}
+# Other tidbits
+* If you change your _config.yml, be sure to restart your `jekyll serve --watch` - I can't tell you how many times I wasted minutes tracking down fake bugs because I forgot!

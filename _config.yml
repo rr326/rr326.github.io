@@ -21,4 +21,13 @@ defaults:
       path: ""
     values:
       layout: "default"
-
+  - scope:
+      path: "bizblog"
+    values:
+      layout: "post"
+      aboutText: "This blog focuses on random business things I've felt like sharing. It's mostly an archive (but there is some good stuff is in here, if I do say so myself)."
+  - scope:
+      path: "devblog"
+    values:
+      layout: "post"
+      aboutText: "This blog focuses technical knowledge I'd like to share."
