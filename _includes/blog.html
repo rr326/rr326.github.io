@@ -4,84 +4,88 @@
 
 
         <div class="container">
-        <br>
-        <br>
+            <div class="main-blog">
+                <div class="row">
+                    <div class="col-lg-8">
+
+
+                        {% for catposts in category %}
+                            {% if forloop.first %}
+                                {% continue %}
+                            {% endif %}
+                            {% for catpost in catposts %}
+                                {% if forloop.index0 < site.blog_full_posts_before_list %}
+
+                                    <div class="row main-blog">
+                                        <div class="row">
+                                            <div class="col-md-3 blog-date">
+                                                <p>
+                                                    {{ catpost.date | date: "%d %b %y" }}
+                                                </p>
+                                            </div>
+                                            <div class="col-md-9 blog-title">
+                                                <h2><a href="{{ site.prefix }}{{ catpost.url }}">{{ catpost.title }}</a>
+                                                </h2>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                        <div class="col-md-9 col-md-offset-3">
+                                            {{ catpost.content }}
+                                            <br>
+                                            <hr>
+                                        </div>
+
+
+                                    </div>
 
 
 
 
-        {% for list in category %}
-            {% if forloop.first %}
-                {% continue %}
-            {% endif %}
-            {% for item in list %}
-                {% unless item =='devblog' %}
+                                {% endif %}
+
+                            {% endfor %}
+                        {% endfor %}
+
+                        <h1>ARCHIVE</h1>
+                        <br>
+
+                        {% for catposts in category %}
+                            {% for catpost in catposts %}
+
+                                <div class="row main-blog blog-archive-mod">
+
+                                    <div class="row">
+                                        <div class="col-md-3 blog-date blog-date-nopad ">
+                                            <p>
+                                                {{ catpost.date | date: "%d %b %y" }}
+                                            </p>
+                                        </div>
+                                        <div class="col-md-9 ">
+                                            <a href="{{ site.prefix }}{{ catpost.url }}">{{ catpost.title }}</a>
+                                        </div>
+                                    </div>
 
 
-                    {% if forloop.index0 < site.blog_full_posts_before_list %}
-
-
-                        <div class="row main-blog"> <!-- Single post -->
-                        <div class="col-lg-8">
-                            <div class="row">
-                                <div class="col-md-3 blog-date">
-                                    <p>
-                                        {{ item.date | date: "%d %b %y" }}
-                                    </p>
                                 </div>
-                                <div class="col-md-9 blog-title">
-                                    <h2><a href="{{ site.prefix }}{{ item.url }}">{{ item.title }}</a></h2>
-                                </div>
-                            </div>
-
-                            <br>
-
-                            <div class="col-md-9 col-md-offset-3">
-                                {{ item.content }}
-                                <br>
-                                <hr>
-                            </div>
+                            {% endfor %}
+                        {% endfor %}
 
 
-                        </div>
+                    </div>
+                    <div class="col-lg-4 ">
 
-                        {% if forloop.first %}
+                        <div class="sidebar-zone">
                             {% include blog_sidebar.html %}
-                        {% endif %}
-
-
-                    {% endif %}
-
-                {% endunless %}
-            {% endfor %}
-        {% endfor %}
-
-    <h1>ARCHIVE</h1>
-    <br>
-
-    {% for list in category %}
-        {% for item in list %}
-
-            <div class="row main-blog blog-archive-mod">
-                <div class="col-lg-8">
-                    <div class="row">
-                        <div class="col-md-3 blog-date blog-date-nopad ">
-                            <p>
-                                {{ item.date | date: "%d %b %y" }}
-                            </p>
-                        </div>
-                        <div class="col-md-9 ">
-                            <a href="{{ site.prefix }}{{ item.url }}">{{ item.title }}</a>
                         </div>
                     </div>
-
                 </div>
+
             </div>
-        {% endfor %}
-    {% endfor %}
 
 
-    </div>
+        </div>
 
         <br>
         <br>

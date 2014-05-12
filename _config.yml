@@ -8,6 +8,7 @@ url: "http://rossrosen.me"
 highlighter: pygments
 theme: "/smartTheme/theme/assets"
 
+
 blog_full_posts_before_list: 2
 
 # Build settings
