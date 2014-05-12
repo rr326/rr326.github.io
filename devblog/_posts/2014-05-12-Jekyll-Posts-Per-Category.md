@@ -7,10 +7,10 @@ I wanted to have two different blogs on my site (one for business topics and one
 
 A few key points:
 * A for loop for an object gives you an array, where the first elment is a name. So, you generally need to treat that element differently.
-* `{ % for category in site.categories %}` gives you: [[cat0name, cat0posts], [cat1name, cat1posts]...] (or something like that!
-* `{ % for catposts in category %}` gives you all the posts in the category: [post1, post2, post3]
-* `{ % for catpost in catposts %}` gives you the actual post objects, so you can do things like {{catpost.content}}
-* Note: Above I have an extra space between the { and % - that's because otherwise jekyll tries to process the liquid tag!  (Below I put my code in a {% raw %} ... {% endraw %} block
+* `{ % for category in site.categories % }` gives you: [[cat0name, cat0posts], [cat1name, cat1posts]...] (or something like that!
+* `{ % for catposts in category % }` gives you all the posts in the category: [post1, post2, post3]
+* `{ % for catpost in catposts % }` gives you the actual post objects, so you can do things like {{catpost.content}}
+* Note: Above I have an extra space between the { and % - that's because otherwise jekyll tries to process the liquid tag!  (Below I put my code in a { % raw % } ... { % endraw % } block.
 
 
 {% highlight jinja %}

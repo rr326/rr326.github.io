@@ -1,5 +1,6 @@
 # TODO
 
+* BUG: Sidebar About doesn't work on github!
 
 * Delete k2company hosting on godaddy (AFTER DOWNLOADING!)
 * revelision & k2company redirects
@@ -13,3 +14,6 @@
 * Title for pages
 * Add bluenorth project
 * Fix box sized on projects page.
+
+
+* Update linkedin and twitter home pages
