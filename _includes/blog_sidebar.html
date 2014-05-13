@@ -1,32 +1,37 @@
-<div class="row main-blog"> <!-- Not sure why this needs the main-blog class, but vert offset is wrong if not -->
+<div class="blog-sidebar">
+    <div class="row main-blog"> <!-- Not sure why this needs the main-blog class, but vert offset is wrong if not -->
 
-    <!-- This is a bit of a hack since github pages doesn't currently use jekyll 2.0, which has directory-defaults (ie: page.aboutText) -->
-    {% if page.categories[0] == 'devblog' %}
-        {% assign cat = 'devblog' %}
-        {% elsif page.categories[0] == 'bizblog' %}
-        {% assign cat = 'bizblog' %}
-        {% elsif page.rcategory == 'devblog' %}
-        {% assign cat = 'devblog' %}
-        {% elsif page.rcategory == 'bizblog' %}
-        {% assign cat = 'bizblog' %}
-    {% endif %}
+        <!-- This is a bit of a hack since github pages doesn't currently use jekyll 2.0, which has directory-defaults (ie: page.aboutText) -->
+        {% if page.categories[0] == 'devblog' %}
+            {% assign cat = 'devblog' %}
+            {% elsif page.categories[0] == 'bizblog' %}
+            {% assign cat = 'bizblog' %}
+            {% elsif page.rcategory == 'devblog' %}
+            {% assign cat = 'devblog' %}
+            {% elsif page.rcategory == 'bizblog' %}
+            {% assign cat = 'bizblog' %}
+        {% endif %}
 
-    {% if cat == 'bizblog' %}
-        {% assign aboutText = "This blog focuses on random business things I've felt like sharing. It's mostly an archive (but there is some good stuff is in here, if I do say so myself)." %}
-        {% elsif cat == 'devblog' %}
-        {% assign aboutText = "This blog focuses technical knowledge I'd like to share." %}
-    {% else %}
-        {% assign aboutText = "This is my blog." %}
-    {% endif %}
+        {% if cat == 'bizblog' %}
+            {% assign aboutText = "This blog focuses on random business things I've felt like sharing. It's mostly an archive (but there is some good stuff is in here, if I do say so myself)." %}
+            {% elsif cat == 'devblog' %}
+            {% assign aboutText = "This blog focuses technical knowledge I'd like to share." %}
+        {% else %}
+            {% assign aboutText = "This is my blog." %}
+        {% endif %}
 
 
 
-    <h6>ABOUT</h6>
+        <a href="/{{ cat }}/feed.xml"><span class="fa-icon icon-rss"></span><br>RSS</a>
 
-    <p>{{ aboutText }}</p>  <!-- When github moves to jekyll 2.0, delete the above and change to page.aboutText -->
-    <br>
 
-    <br>
-    <br>
-    <br>
+        <h6>ABOUT</h6>
+
+        <p>{{ aboutText }}</p> <!-- When github moves to jekyll 2.0, delete the above and change to page.aboutText -->
+        <br>
+
+        <br>
+        <br>
+        <br>
+    </div>
 </div>

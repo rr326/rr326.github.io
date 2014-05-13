@@ -4,7 +4,6 @@
 * Delete k2company hosting on godaddy (AFTER DOWNLOADING!)
 * revelision & k2company redirects
 * Paginator - modulus
-* RSS
 * first posts on jekyll
 * test google analytics
 * Title for pages

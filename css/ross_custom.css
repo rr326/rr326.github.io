@@ -42,4 +42,9 @@ body {
 
 }
 
+.blog-sidebar .fa-icon {
+    color: inherit;
+    font-size: 30px;
+}
+
 
