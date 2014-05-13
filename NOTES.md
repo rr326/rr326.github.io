@@ -1,14 +1,10 @@
 # TODO
 
-* BUG: Sidebar About doesn't work on github!
 
 * Delete k2company hosting on godaddy (AFTER DOWNLOADING!)
 * revelision & k2company redirects
-* Disquis
 * Paginator - modulus
 * RSS
-* Share
-* Twitter
 * first posts on jekyll
 * test google analytics
 * Title for pages
@@ -17,3 +13,8 @@
 
 
 * Update linkedin and twitter home pages
+
+
+* Deferred
+    * Disqus - can't have multiple per page (like on my blog page). Is having comments really needed? Probably not.
+    * Share

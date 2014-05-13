@@ -2,10 +2,9 @@
  * Copy the page _includes/blog.html
  * Paste the content into the html section below (in the middle of the boilerplate includes)
  * Change all variables to <<page.xxx>>
- * Change the page.content to << page.content  | markdownify>>
+ * Change the page.content to << content >>
 
  -->
-
 <!DOCTYPE html>
 <html>
   {% include head.html %}
@@ -41,8 +40,10 @@
                         <br>
 
                         <div class="col-md-9 col-md-offset-3">
-                            {{ page.content  | markdownify}}
+                            {{content}}
+
                             <br>
+
                             <hr>
                         </div>
 
