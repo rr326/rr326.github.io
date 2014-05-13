@@ -5,9 +5,13 @@
 * revelision & k2company redirects
 * first posts on jekyll
 * test google analytics
-
-
 * Update linkedin and twitter home pages & pictures
+
+TBD
+* Fix blog pages to use excerpts or paginator plugin
+* Move arhive to sidebar
+* Something else on sidebar?
+* Change format of blog page for less white space
 
 
 * Deferred
