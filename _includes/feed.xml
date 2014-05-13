@@ -8,10 +8,12 @@
         {% for category in site.categories %}
             {% if category[0] == page.rcategory %}
                 {% for catposts in category %}
+                    {% if forloop.first %}
+                        {% continue %}
+                    {% endif %}
                     {% for catpost in catposts limit:10 %}
                         <item>
                             <title>{{ catpost.title | xml_escape }}</title>
-                            <description>{{ catpost.content | xml_escape }}</description>
                             <pubDate>{{ catpost.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
                             <link>{{ site.url }}{{ catpost.url }}</link>
                             <guid isPermaLink="true">{{ site.url }}{{ catpost.url }}</guid>
