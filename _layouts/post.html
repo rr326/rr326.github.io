@@ -7,74 +7,86 @@
  -->
 <!DOCTYPE html>
 <html>
-  {% include head.html %}
+{% include head.html %}
 
-    <body>
+<body>
 
-    {% include header.html %}
-
-
+{% include header.html %}
 
 
+<div class="container">
+    <div class="main-blog">
+        <div class="row">
+            <div class="col-lg-8">
 
-
-
-    <div class="container">
-        <div class="main-blog">
-            <div class="row">
-                <div class="col-lg-8">
-
-                    <div class="row main-blog">
-                        <div class="row">
-                            <div class="col-md-3 blog-date">
-                                <p>
-                                    {{ page.date | date: "%d %b %y" }}
-                                </p>
-                            </div>
-                            <div class="col-md-9 blog-title">
-                                <h2><a href="{{ site.prefix }}{{ page.url }}">{{ page.title }}</a>
-                                </h2>
-                            </div>
+                <div class="row main-blog">
+                    <div class="row">
+                        <div class="col-md-3 blog-date">
+                            <p>
+                                {{ page.date | date: "%d %b %y" }}
+                            </p>
                         </div>
+                        <div class="col-md-9 blog-title">
+                            <h2><a href="{{ site.prefix }}{{ page.url }}">{{ page.title }}</a>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="col-md-9 col-md-offset-3">
+                        {{ content }}
 
                         <br>
+                        <!-- Disqus -->
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                            var disqus_shortname = 'rossrosen'; // required: replace example with your forum shortname
 
-                        <div class="col-md-9 col-md-offset-3">
-                            {{content}}
+                            /* * * DON'T EDIT BELOW THIS LINE * * */
+                            (function () {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript';
+                                dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments
+                            powered by Disqus.</a>
+                        </noscript>
+                        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        <br>
 
-                            <br>
-
-                            <hr>
-                        </div>
-
-
+                        <hr>
                     </div>
 
 
                 </div>
-                <div class="col-lg-4 ">
 
-                    <div class="sidebar-zone">
-                        {% include blog_sidebar.html %}
-                    </div>
+
+            </div>
+            <div class="col-lg-4 ">
+
+                <div class="sidebar-zone">
+                    {% include blog_sidebar.html %}
                 </div>
             </div>
-
         </div>
-
 
     </div>
 
-    <br>
-    <br>
-    <br>
+
+</div>
+
+<br>
+<br>
+<br>
 
 
+{% include footer.html %}
 
 
-
-
-    {% include footer.html %}
-
-    </body>
+</body>
 </html>
