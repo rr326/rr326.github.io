@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{ site.name | xml_escape }} {{ feed_subtitle }}</title>
+        <description>{{ feed_description }}</description>
+        <link>{{ site.url }}</link>
+        <atom:link href="{{ site.url }}/feed.category.xml" rel="self" type="application/rss+xml"/>
+        {% for category in site.categories %}
+            {% if category[0] == page.rcategory %}
+                {% for catposts in category %}
+                    {% for catpost in catposts limit:10 %}
+                        <item>
+                            <title>{{ catpost.title | xml_escape }}</title>
+                            <description>{{ catpost.content | xml_escape }}</description>
+                            <pubDate>{{ catpost.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+                            <link>{{ site.url }}{{ catpost.url }}</link>
+                            <guid isPermaLink="true">{{ site.url }}{{ catpost.url }}</guid>
+                        </item>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </channel>
+</rss>

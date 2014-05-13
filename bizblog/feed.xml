@@ -1,0 +1,8 @@
+---
+layout: none
+feed_subtitle: "Business Blog"
+feed_description: "Posts about business topics"
+rcategory: bizblog
+---
+
+{% include feed.xml %}

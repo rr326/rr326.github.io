@@ -1,0 +1,8 @@
+---
+layout: none
+feed_subtitle: "Development Blog"
+feed_description: "Posts about software development"
+rcategory: devblog
+---
+
+{% include feed.xml %}
