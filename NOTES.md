@@ -3,17 +3,16 @@
 
 * Delete k2company hosting on godaddy (AFTER DOWNLOADING!)
 * revelision & k2company redirects
-* Paginator - modulus
 * first posts on jekyll
 * test google analytics
-* Title for pages
-* Add bluenorth project
-* Fix box sized on projects page.
 
 
-* Update linkedin and twitter home pages
+* Update linkedin and twitter home pages & pictures
 
 
 * Deferred
-    * Disqus - can't have multiple per page (like on my blog page). Is having comments really needed? Probably not.
     * Share
+    * Make project boxes all the same size
+        - This is harder than it looks.
+        - I tried various things, like this: http://stackoverflow.com/a/14004918/1400991
+        - None of it worked well.
