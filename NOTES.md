@@ -1,11 +1,9 @@
 # TODO
 
-* Update linkedin and twitter home pages & pictures
 * test google analytics
 
 * first posts on jekyll
 
-* Zephyrzone - what to do?
 * Delete k2company hosting on godaddy (AFTER DOWNLOADING!)
 
 TBD

@@ -37,12 +37,13 @@ A few key points:
 
 
 
-# Other tidbits
+# Other Jekyll tidbits
 * **jekyll serve --watch:**
 If you change your _config.yml, be sure to restart your `jekyll serve --watch` - I can't tell you how many times I wasted minutes tracking down fake bugs because I forgot!
 * **'content' vs. 'page.content':** Uggh - this was a big pain. In a layout file use { % content % } and not { % page.content &#124; markdownify % }.  If you do the latter, it will *mostly* work, but you'll get strange errors, like { % highlight % } blocks not working. Like most bugs, this one was obvious - ex post!
 
     > Content - In layout files, the rendered content of the Post or Page being wrapped. Not defined in Post or Page files.
 * **pipe (&#124;) :** - Weird - pipe causes problems in the markdown. Type &amp;#124;  or \\\|
-* **\{\% .. \%\}:** - These are interpreted as liquid templates. So either put a space between the {} and % or wrap in { %raw% } { %endraw% }
+* **{%raw%}{% .. %}{%endraw%}:** - These are interpreted as liquid templates. So either put a space between the {} and % or wrap in `{ %raw% } { %endraw% }`
+* **Github jekyll**: If you are going to host your jekyll blog on github pages, you need to be using the same version of jekyll as Github to make sure what you are testing locally is what they are displaying.  Follow the instructions here: [Using Jekyll with Github Pages](https://help.github.com/articles/using-jekyll-with-pages)
 
