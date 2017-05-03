@@ -1,3 +1,5 @@
+To push - simply 'git push' --> This is served via github pages
+
 # TODO
 
 * test google analytics
@@ -20,3 +22,8 @@ TBD
         - This is harder than it looks.
         - I tried various things, like this: http://stackoverflow.com/a/14004918/1400991
         - None of it worked well.
+
+5/3/17
+* Updated to use Jekyll 3.4.3
+* Had to manually link to the theme assets. (No longer using the old-style theme.)
+* To push - simply 'git push' --> This is served via github pages
