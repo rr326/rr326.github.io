@@ -5,8 +5,10 @@ email: rrosen326@gmail.com
 description: "Ross Rosen startups, web development, Stanford, Seattle"
 baseurl: ""
 url: "http://rossrosen.me"
-highlighter: pygments
-theme: "/smartTheme/theme/assets"
+
+# These two came from a previous version of Jekyll.
+# highlighter: pygments
+# theme: "/smartTheme/theme/assets"
 
 
 blog_full_posts_before_list: 2
